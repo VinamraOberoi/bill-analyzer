@@ -8,6 +8,14 @@ spreadsheet you can actually use.
 
 ---
 
+<!--
+SCREENSHOT: add one here. Run the app, scan the sample receipt, and screenshot the
+window with the parsed category and total visible. Save it as docs/screenshot.png,
+then delete this comment and uncomment the line below.
+
+![Bill Analyzer scanning a receipt](docs/screenshot.png)
+-->
+
 ## What it does
 
 1. **Capture** — upload an image of a bill, or take one live from the webcam
@@ -48,6 +56,16 @@ python final.py
 ```
 
 A webcam is required for the *Take Bill Photo* path; the upload path works without one.
+`receipt-template-with-barcode.jpg` in the repo is a sample receipt to test against.
+
+## Packaging as a standalone executable
+
+```bash
+pyinstaller --onefile -w final.py
+```
+
+A prebuilt Windows executable is
+[available here](https://drive.google.com/file/d/1CKE8r2ekOh3r2L1CE04lnep2arKr1ODb/view?usp=sharing).
 
 ## Repository layout
 
@@ -56,7 +74,6 @@ A webcam is required for the *Take Bill Photo* path; the upload path works witho
 | `final.py` | The application — GUI, OCR, classification, CSV logging |
 | `Hackathon_1.ipynb` | Notebook the OCR and parsing logic was prototyped in |
 | `receipt-template-with-barcode.jpg` | Sample receipt for testing |
-| `convertexe.txt` | Notes for packaging the script as a standalone executable |
 
 ## Known limits
 
